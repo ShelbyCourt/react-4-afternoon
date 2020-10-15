@@ -37,6 +37,9 @@ render() {
       <h1>{this.props.match.params.class}</h1>
       <h2>ClassList:</h2>
       {students}
+      <Link to="/">
+          <button className='btn'> HOME </button>
+          </Link>
     </div>
     );
   }

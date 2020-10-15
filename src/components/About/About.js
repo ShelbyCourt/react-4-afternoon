@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import History from "../History/History";
 import Contact from "../Contact/Contact";
 
@@ -13,16 +12,17 @@ export default class About extends Component {
           <Link to="/about" className='subnav_links'>
           <h3>About</h3>
           </Link>
-          <Link to="/about/history" className='subnav_links'>
+          <Link to="/history" className='subnav_links'>
           <h3>History</h3>
           </Link>
-          <Link to="/about/contact" className='subnav_links'><h3>Contact</h3>
+          <Link to="/contact" className='subnav_links'>
+          <h3>Contact</h3>
           </Link>
         </div>
         <div className='box'>
           <Switch>
-            <Route path="/about/history" Component= { History } />
-            <Route path="/about/contact" Component= { Contact } />
+            <Route path="/history" Component= {History} />
+            <Route path="/contact" Component= {Contact} />
             <Route 
             path="/about"
             render={() => (

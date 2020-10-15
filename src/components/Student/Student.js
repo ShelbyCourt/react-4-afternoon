@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class Student extends Component {
   constructor() {
@@ -18,12 +19,10 @@ componentDidMount () {
   });
 }
 
-
-
-
-
   render() {
+
     return (
+      <div>
       <div className="box">
         <h1>Student: </h1>
         <h1>
@@ -31,6 +30,12 @@ componentDidMount () {
         </h1>
         <h3>Grade: {this.state.studentInfo.grade}</h3>
         <h3>Email: {this.state.studentInfo.email}</h3>
+      </div>
+      <div className="backtoclass">
+          <Link to={`/classlist/${this.state.studentInfo.class}`}>
+          <button className='btn'> Class List </button>
+          </Link>
+      </div>
       </div>
     )
   }
